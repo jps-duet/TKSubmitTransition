@@ -59,7 +59,7 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
         
     }
 
-    open func startFinishAnimation(_ delay: TimeInterval,_ animation: CAMediaTimingFunction, completion:(()->())?) {
+    open func startFinishAnimation(_ delay: TimeInterval,_ animation: CAMediaTimingFunction? = nil, completion:(()->())?) {
         Timer.schedule(delay: delay) { timer in
             self.didEndFinishAnimation = completion
             self.expand(animation)
@@ -67,7 +67,7 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
         }
     }
 
-    open func animate(_ duration: TimeInterval,_ animation: CAMediaTimingFunction, completion:(()->())?) {
+    open func animate(_ duration: TimeInterval,_ animation: CAMediaTimingFunction? = nil, completion:(()->())?) {
         startLoadingAnimation()
         startFinishAnimation(duration, animation, completion: completion)
     }
@@ -105,11 +105,11 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
         layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
     }
     
-    func expand(_ animation: CAMediaTimingFunction) {
+    func expand(_ animation: CAMediaTimingFunction? = nil) {
         let expandAnim = CABasicAnimation(keyPath: "transform.scale")
         expandAnim.fromValue = 1.0
         expandAnim.toValue = 26.0
-        expandAnim.timingFunction = animation
+        expandAnim.timingFunction = animation ?? expandCurve
         expandAnim.duration = 0.3
         expandAnim.delegate = self
         expandAnim.fillMode = kCAFillModeForwards
