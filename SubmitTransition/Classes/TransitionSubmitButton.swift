@@ -92,6 +92,7 @@ open class TKTransitionSubmitButton : UIButton, UIViewControllerTransitioningDel
         self.layer.removeAllAnimations()
         self.setTitle(self.cachedTitle, for: UIControlState())
         self.spiner.stopAnimation()
+		self.layer.cornerRadius = CGFloat(self.normalCornerRadius.doubleValue)
     }
     
     func shrink() {
