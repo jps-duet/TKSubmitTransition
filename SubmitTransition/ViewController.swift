@@ -28,6 +28,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         button.animate(1, completion: { () -> () in
             let secondVC = SecondViewController()
             secondVC.transitioningDelegate = self
+			secondVC.modalPresentationStyle = .fullScreen
             self.present(secondVC, animated: true, completion: nil)
         })
     }
