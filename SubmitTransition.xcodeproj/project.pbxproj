@@ -183,9 +183,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 569BB9F420B3581C005DB636 /* Build configuration list for PBXNativeTarget "TKSubmitButtons" */;
 			buildPhases = (
+				569BB9EA20B3581C005DB636 /* Headers */,
 				569BB9E820B3581C005DB636 /* Sources */,
 				569BB9E920B3581C005DB636 /* Frameworks */,
-				569BB9EA20B3581C005DB636 /* Headers */,
 				569BB9EB20B3581C005DB636 /* Resources */,
 			);
 			buildRules = (
@@ -263,6 +263,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
