@@ -9,6 +9,13 @@ class SpinerLayer: CAShapeLayer {
         }
     }
     
+	// Added init to circumwent Xcode live view debugger error
+	// TKSubmitButtons/SpinerLayer.swift:4: Fatal error: Use of unimplemented initializer 'init(layer:)' for class 'TKSubmitButtons.SpinerLayer'
+	override init(layer: Any) {
+		#warning("TKSubmitButtons/SpinerLayer.swift: Using unimplemented init(layer: Any)")
+		super.init(layer: layer)
+	}
+	
     init(frame:CGRect) {
         super.init()
 
